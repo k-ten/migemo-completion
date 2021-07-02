@@ -5,7 +5,7 @@ Ivyなどを使用していない、素のminibufferでmigemoが効きます。
 #+BEGIN_SRC emacs-lisp
   (use-package migemo-completion
     :config (add-to-list 'completion-styles 'migemo t)
-    :load-path "/migemo-icompletionを置いたディレクトリ")
+    :load-path "/migemo-completionを置いたディレクトリ")
 #+END_SRC
 
 みたいに使います。
