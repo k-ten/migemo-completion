@@ -1,0 +1,22 @@
+* 使い方
+Ivyなどを使用していない、素のminibufferでmigemoが効きます。
+当然、migemoの設定ができていないと使えません。
+
+#+BEGIN_SRC emacs-lisp
+  (use-package migemo-completion
+    :config (add-to-list 'completion-styles 'migemo t)
+    :load-path "/migemo-icompletionを置いたディレクトリ")
+#+END_SRC
+
+みたいに使います。
+completion-stylesの先頭にmigemoを挿入すると、変になるバグがあります。
+
+* migemo-fido-mode
+icomplete.elのfido-modeを使っているときはfido-modeがcompletion-stylesを'(flex)に設定するので、そのままでは使えません。
+
+#+BEGIN_SRC emacs-lisp
+  (use-package migemo-completion
+    :config (migemo-fido-mode))
+#+END_SRC
+
+でfido-modeがcompletion-stylesを設定した後に、completion-stylesにmigemoを追加します。
